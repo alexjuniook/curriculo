@@ -1,0 +1,196 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Roboto:wght@300;400;700&display=swap');
+
+:root {
+    --primary-color: #0a0a23; /* Azul escuro quase preto */
+    --secondary-color: #00f2ea; /* Ciano vibrante / Neon */
+    --accent-color: #9400d3; /* Roxo escuro / Violeta */
+    --text-color: #e0e0e0; /* Cinza claro para texto */
+    --glass-bg: rgba(10, 10, 35, 0.5); /* Fundo do vidro - azulado escuro semi-transparente */
+    --glass-border: rgba(0, 242, 234, 0.3); /* Borda do vidro - ciano semi-transparente */
+    --blur-intensity: 10px;
+    --border-radius: 15px;
+    --font-main: 'Roboto', sans-serif;
+    --font-headings: 'Orbitron', sans-serif;
+    --glow-color: var(--secondary-color); /* Cor do brilho neon */
+}
+
+/* Animação de fundo sutil */
+@keyframes subtlePulse {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--font-main);
+    background-color: var(--primary-color);
+    color: var(--text-color);
+    line-height: 1.6;
+    overflow-x: hidden; /* Prevenir scroll horizontal indesejado */
+    /* Adicionar um fundo futurista sutil aqui depois, talvez um gradiente ou imagem */
+    background-image: linear-gradient(to bottom right, var(--primary-color), #050515);
+}
+
+.container {
+    width: 90%;
+    max-width: 1000px;
+    margin: auto;
+    padding: 20px 0;
+}
+
+header {
+    background-color: rgba(0,0,0,0.3);
+    color: var(--secondary-color);
+    padding: 30px 0;
+    text-align: center;
+    border-bottom: 2px solid var(--secondary-color);
+    margin-bottom: 30px;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    backdrop-filter: blur(var(--blur-intensity));
+    -webkit-backdrop-filter: blur(var(--blur-intensity));
+}
+
+header h1 {
+    font-family: var(--font-headings);
+    font-size: 2.8em;
+    margin-bottom: 5px;
+    letter-spacing: 2px;
+    text-shadow: 0 0 10px var(--secondary-color), 0 0 20px var(--secondary-color);
+}
+
+header p {
+    font-family: var(--font-headings);
+    font-size: 1.2em;
+    color: var(--text-color);
+    letter-spacing: 1px;
+}
+
+.glass-section {
+    background: var(--glass-bg);
+    border: 1px solid var(--glass-border);
+    border-radius: var(--border-radius);
+    padding: 25px;
+    margin-bottom: 30px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.2);
+    backdrop-filter: blur(var(--blur-intensity));
+    -webkit-backdrop-filter: blur(var(--blur-intensity));
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.glass-section:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 40px rgba(0, 242, 234, 0.2); /* Sombra mais pronunciada no hover */
+}
+
+.glass-section h2 {
+    font-family: var(--font-headings);
+    color: var(--secondary-color);
+    font-size: 1.8em;
+    margin-bottom: 20px;
+    text-align: center;
+    letter-spacing: 1px;
+    border-bottom: 1px solid var(--glass-border);
+    padding-bottom: 10px;
+}
+
+#contato a {
+    color: var(--secondary-color);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+#contato a:hover {
+    color: #fff;
+    text-shadow: 0 0 8px var(--secondary-color);
+}
+
+#contato p {
+    margin-bottom: 10px;
+    font-size: 1.1em;
+    display: flex;
+    align-items: center;
+}
+
+#contato .icon {
+    margin-right: 10px;
+    color: var(--secondary-color);
+    font-size: 1.2em; /* Ajuste o tamanho do ícone se necessário */
+}
+
+
+#habilidades ul,
+#formacao ul,
+#adicionais ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+#habilidades li,
+#formacao li,
+#adicionais li {
+    background-color: rgba(0, 242, 234, 0.05);
+    padding: 10px;
+    margin-bottom: 8px;
+    border-left: 3px solid var(--secondary-color);
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+#habilidades li:hover,
+#formacao li:hover,
+#adicionais li:hover {
+    background-color: rgba(0, 242, 234, 0.15);
+}
+
+.job {
+    margin-bottom: 20px;
+    padding: 15px;
+    border: 1px solid var(--glass-border);
+    border-radius: 10px;
+    background: rgba(10, 10, 35, 0.3); /* Um pouco mais escuro para diferenciar */
+}
+
+.job h3 {
+    font-family: var(--font-headings);
+    color: var(--secondary-color);
+    margin-bottom: 5px;
+}
+
+.job p {
+    margin-bottom: 5px;
+}
+
+footer {
+    text-align: center;
+    padding: 20px 0;
+    margin-top: 30px;
+    border-top: 1px solid var(--glass-border);
+    color: var(--text-color);
+    font-size: 0.9em;
+}
+
+/* Efeitos futuristas e animações podem ser adicionados aqui */
+
+/* Responsividade básica */
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 2em;
+    }
+    header p {
+        font-size: 1em;
+    }
+    .glass-section h2 {
+        font-size: 1.5em;
+    }
+    .container {
+        width: 95%;
+    }
+}
